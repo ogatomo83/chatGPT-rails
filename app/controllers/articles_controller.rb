@@ -37,6 +37,7 @@ class ArticlesController < ApplicationController
         temperature: 0.7,
       }
     )
+    puts response.dig("choices", 0, "message", "content")
     @article = Article.new(body: response.dig("choices", 0, "message", "content"))
 
     respond_to do |format|
